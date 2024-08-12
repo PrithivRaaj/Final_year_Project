@@ -26,4 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
             labels: ['0s', '0.25s', '0.5s', '0.75s', '1s'],
             datasets: [{
                 label: 'EEG Signal',
-                data: [12, 19, 3, 5, 
+                data: [12, 19, 3, 5, 2],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true
+            }]
+        };
+        
+        new Chart(eegChart, {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+});
