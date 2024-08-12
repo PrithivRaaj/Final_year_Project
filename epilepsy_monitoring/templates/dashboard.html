@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epilepsy Monitoring Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Epilepsy Monitoring Dashboard</h1>
+    </header>
+    <main>
+        <section class="patient-info">
+            <h2>Patient Information</h2>
+            <div class="info-box">
+                <p><strong>Name:</strong> <span id="patient-name">John Doe</span></p>
+                <p><strong>Age:</strong> <span id="patient-age">25</span></p>
+                <p><strong>Last Seizure:</strong> <span id="last-seizure">2 hours ago</span></p>
+                <p><strong>Medication:</strong> <span id="medication">Lamotrigine</span></p>
+            </div>
+        </section>
+
+        <section class="real-time-monitoring">
+            <h2>Real-Time Monitoring</h2>
+            <div class="monitoring-box">
+                <canvas id="eeg-chart"></canvas>
+                <p><strong>Electrodermal Activity:</strong> <span id="eda">Normal</span></p>
+                <p><strong>Temperature:</strong> <span id="temperature">36.6°C</span></p>
+                <p><strong>Movement:</strong> <span id="movement">Stable</span></p>
+            </div>
+        </section>
+
+        <section class="alerts">
+            <h2>Alerts</h2>
+            <div class="alerts-box">
+                <ul id="alert-list">
+                    <li>Low-level seizure detected at 10:45 AM.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="activities">
+            <h2>Daily Activities</h2>
+            <div class="activities-box">
+                <p><strong>Current Activity:</strong> <span id="current-activity">Walking</span></p>
+                <p><strong>Suggested Activity:</strong> <span id="suggested-activity">Reading</span></p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
